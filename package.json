@@ -1,0 +1,24 @@
+{
+  "name": "petstagram",
+  "version": "1.0.0",
+  "description": "project 2, ironhack bootcamp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaikazeeman/petstagram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yaikazeeman/petstagram/issues"
+  },
+  "homepage": "https://github.com/Yaikazeeman/petstagram#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.4",
+    "nodemon": "^1.19.1"
+  }
+}
