@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/Yaikazeeman/petstagram#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "hbs": "^4.0.4",
+    "mongo-connect": "0.0.6",
+    "mongoose": "^5.6.7",
     "nodemon": "^1.19.1"
   }
 }
