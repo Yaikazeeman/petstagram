@@ -1,12 +1,14 @@
 <div class="post">
+    <img src="{{postedBy.profileImg}}">
+    <p>{{postedBy.username}}</p>
+    <img src="/images/userPhotos/{{image}}">
     <div>
-        <img src="{{profileImg}}">
-        <p>{{username}}</p>
+        <p>{{caption}}</p>
     </div>
-    <img src="{{image}}">
     <div>
-        <button class="likeButton"></button>
-        <button class="commentButton"></button>
+        <button class="likeButton">like</button>
+        <button class="commentButton">comment</button>
         {{!-- <p>Likes: {{///likes number}}</p> --}}
     </div>
 </div>
+

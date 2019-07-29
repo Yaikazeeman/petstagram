@@ -1,0 +1,22 @@
+nav {
+    background-color: lightgray;
+    margin: 0;
+    position: sticky;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px;
+
+}
+
+nav ul a{
+    margin: 15px;
+    text-decoration: none;
+}
+
+nav ul a li {
+    list-style: none;
+}
