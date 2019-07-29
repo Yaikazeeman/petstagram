@@ -1,9 +1,10 @@
-const express = require('express');
-const app = express();
-const hbs = require('hbs');
-const path = require('path')
-const mongoose = require('mongoose');
+const express    = require('express');
+const app        = express();
+const hbs        = require('hbs');
+const path       = require('path')
+const mongoose   = require('mongoose');
 const bodyParser = require('body-parser');
+const multer     = require('multer');
 
 
 app.set('view engine', 'hbs')
@@ -21,6 +22,20 @@ mongoose.connect('mongodb://localhost/petstagram', { useNewParser: true})
 
     });
 
+    const myStorage = multer.diskStorage({
+        destination: function(req, file, cb) {
+            cb(null, 'public/images/userPhotos')
+        },
+        filename: function(req, file, cb) {
+            cb(null, file.originalname)
+        }
+     })
+     const upload = multer({ storage: myStorage });
+
+// let upload = multer({ dest: "public/images/userPhotos", filename: function(req, file, cb){
+//     cb(null, file.filename+ '.jpg')
+// }  });
+
 const index = require('./routes/index')
 app.use('/', index);
 const login = require('./routes/login')
@@ -28,7 +43,7 @@ app.use('/', login);
 const signup = require('./routes/signup')
 app.use('/', signup);
 const create = require('./routes/create')
-app.use('/', create);
+app.use('/', upload.single('image'), create);
 const profilepage = require('./routes/profilepage')
 app.use('/', profilepage);
 //why can't I define pages here?? 

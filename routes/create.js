@@ -12,10 +12,12 @@ router.get('/create', (req, res) => {
     res.render('create');
 })
 
-router.post('/create', (req, res) => {
-    if(error) throw new Error("Encryption error");
+router.post('/create', (req, res, next) => {
+    // console.log(req.file.filename)
+    // res.redirect('/create')
+    // const imgReceived = `${req.file.filename}.jpg`
     let newPost = new Post ({
-        image: req.body.image,
+        image: req.file.filename,
         caption: req.body.caption
     })
     newPost.save()

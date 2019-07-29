@@ -2,7 +2,9 @@ body {
     margin: 0;
 }
 
-
+img {
+    width: 100vw;
+}
 
 form {
     display: flex;
@@ -40,4 +42,8 @@ nav ul a{
 
 nav ul a li {
     list-style: none;
+}
+
+.profile {
+    margin: 20px;
 }

@@ -8,7 +8,7 @@ const postSchema = new Schema ({
     caption: String,
     comment: String,
     likes: Number,
-    likedBy: Array
+    likedBy: {type: ObjectId, ref: 'Users'}
 });
 
 const Post = mongoose.model('posts', postSchema, "posts")

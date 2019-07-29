@@ -1,14 +1,12 @@
-{{#each post}}
-    <div class="post">
-        <div>
-            <img src="{{profileImg}}">
-            <p>{{username}}</p>
-        </div>
-        <img src="{{image}}">
-        <div>
-            <button class="likeButton"></button>
-            <button class="commentButton"></button>
-            <p>Likes: {{//likes}}</p>
-        </div>
+<div class="post">
+    <div>
+        <img src="{{profileImg}}">
+        <p>{{username}}</p>
     </div>
-{{/each}}
+    <img src="{{image}}">
+    <div>
+        <button class="likeButton"></button>
+        <button class="commentButton"></button>
+        {{!-- <p>Likes: {{///likes number}}</p> --}}
+    </div>
+</div>
