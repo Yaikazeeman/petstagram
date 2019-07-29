@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express    = require('express');
 const app        = express();
 const hbs        = require('hbs');
@@ -14,7 +16,7 @@ hbs.registerPartials(path.join(__dirname, 'views','partials'))
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect('mongodb://localhost/petstagram', { useNewParser: true})
+mongoose.connect(process.env.MONGODB_URI, { useNewParser: true})
     .then((x) => {
         console.log(`database name: ${x.connections[0].name}`);
     }).catch(err => {
@@ -49,4 +51,4 @@ app.use('/', profilepage);
 //why can't I define pages here?? 
 
 
-app.listen(3000, () => {console.log("app listening on port 3000")})
+app.listen(process.env.PORT, () => {console.log(`app listening on port ${process.env.PORT}`)})
