@@ -7,6 +7,8 @@ const path       = require('path')
 const mongoose   = require('mongoose');
 const bodyParser = require('body-parser');
 const multer     = require('multer');
+const session    = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 
 app.set('view engine', 'hbs')
@@ -15,40 +17,63 @@ hbs.registerPartials(path.join(__dirname, 'views','partials'))
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-mongoose.connect(process.env.MONGODB_URI, { useNewParser: true})
+//connection to the database
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true})
     .then((x) => {
         console.log(`database name: ${x.connections[0].name}`);
     }).catch(err => {
         console.log('error', err);
-
     });
 
-    const myStorage = multer.diskStorage({
-        destination: function(req, file, cb) {
-            cb(null, 'public/images/userPhotos')
-        },
-        filename: function(req, file, cb) {
-            cb(null, file.originalname)
-        }
-     })
-     const upload = multer({ storage: myStorage });
+//uploading files
+const myStorage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/images/userPhotos')
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname)
+    }
+    })
+    const upload = multer({ storage: myStorage });
 
-// let upload = multer({ dest: "public/images/userPhotos", filename: function(req, file, cb){
-//     cb(null, file.filename+ '.jpg')
-// }  });
+//setting the session cookie
+app.use(session({
+    secret: "basic-auth-secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 },
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        ttl: 24 * 60 * 60 // 1 day
+    })
+    }));
 
-const index = require('./routes/index')
-app.use('/', index);
+
+//accessControl with session
+let accessControl = (req, res, next)=> {
+    if (req.session.user){
+        next();
+    }else{
+        res.redirect('/login')
+    }
+}
+
+// app.use(function(req,res,next) {
+//     if(req.session.user) res.locals.user = req.session.user;
+//     next();
+//     })
+
 const login = require('./routes/login')
 app.use('/', login);
 const signup = require('./routes/signup')
 app.use('/', signup);
+const index = require('./routes/index')
+app.use('/', accessControl, index);
 const create = require('./routes/create')
-app.use('/', upload.single('image'), create);
+app.use('/', accessControl, upload.single('image'), create);
 const profilepage = require('./routes/profilepage')
-app.use('/', profilepage);
-//why can't I define pages here?? 
-
+app.use('/', accessControl, profilepage);
+const logout = require('./routes/login')
+app.use('/', accessControl, logout);
 
 app.listen(process.env.PORT, () => {console.log(`app listening on port ${process.env.PORT}`)})

@@ -1,14 +1,35 @@
+.form-container {
+    margin: 30% auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 20px;
+}
+
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 form input {
     margin: 5px auto;
-    width: 80vw;
+    width: 90%;
 }
 
 form button {
     margin: 0 auto;
-    width: 70vw;
+    width: 70%;
+}
+
+form h3 {
+    text-align: center;
+}
+
+form a {
+    text-align: center;
+    margin: 10px;
 }

@@ -1,3 +1,7 @@
+@import "components/_nav.css";
+@import "components/_footer.css";
+@import "components/_form.css";
+
 body {
     margin: 0;
 }
@@ -10,4 +14,3 @@ img {
     margin: 20px;
 }
 
-@import url("../styles/components/_nav.css");

@@ -21,6 +21,7 @@ router.post('/create', (req, res, next) => {
         caption: req.body.caption
     })
     newPost.save()
+    // .populate('postedBy')
         .then(()=>{
             res.redirect('/')
             console.log("Your post is saved")
