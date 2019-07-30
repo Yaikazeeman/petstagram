@@ -1,0 +1,39 @@
+.post {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.post-img {
+    width: 100%;
+}
+
+.post-buttons {
+    width: 25px;
+    height: 25px;   
+    margin: 10px;
+}
+
+.likes {
+    width: 30%;
+}
+
+.comments {
+    width: 40%;
+}
+
+.comments a {
+    margin: 10px;
+}
+
+.caption {
+    margin: 5px 10px;
+}
+
+.profileimg {
+    width: 20px;
+}

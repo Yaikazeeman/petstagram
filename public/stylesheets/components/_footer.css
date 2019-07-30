@@ -2,10 +2,11 @@ footer {
     position: fixed;
     width: 100vw;
     bottom: 0;
-    background-color: lightgray;
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.2);
+    background-color: white;
 }
 
 footer a {

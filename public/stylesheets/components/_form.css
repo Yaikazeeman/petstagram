@@ -5,8 +5,10 @@
     justify-content: center;
     width: 80%;
     border-style: solid;
-    border-color: gray;
+    border-color:#5fa393;
+    border-width: 1px;
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 form {
@@ -21,15 +23,33 @@ form input {
 }
 
 form button {
-    margin: 0 auto;
+    margin: 8px auto;
     width: 70%;
+    background-color: #78cfba;
+    padding: 8px;
+    border-radius: 15px;
+    border-color: #5fa393;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-form h3 {
+form h2 {
     text-align: center;
+    color:#5fa393;;
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 form a {
     text-align: center;
     margin: 10px;
+}
+
+.button-style {
+    margin: 8px auto;
+    width: 70%;
+    background-color: #78cfba;
+    padding: 8px;
+    border-radius: 15px;
+    border-color: #5fa393;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

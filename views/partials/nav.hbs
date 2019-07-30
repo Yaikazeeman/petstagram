@@ -1,6 +1,10 @@
 <nav>
-    <ul>
-        <a href="/"><li>Home</li></a>
-        <a href="/profilepage"><li>Profile</li></a>
-    </ul>
+    {{#if user}}
+    <a href="/"><img class="nav-link" src="/images/home-link.png"></a>
+    <img class="nav-logo" src="/images/logo-full.png">
+    <a  href="/profilepage"><img class="nav-link" src="/images/profile-link(2).png"></a>
+    {{else}}
+    <img class="nav-logo nav-logo-center" src="/images/logo-full.png">
+    {{/if}}
 </nav>
+

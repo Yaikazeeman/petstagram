@@ -1,16 +1,7 @@
+@import "general.css";
 @import "components/_nav.css";
 @import "components/_footer.css";
 @import "components/_form.css";
-
-body {
-    margin: 0;
-}
-
-img {
-    width: 100vw;
-}
-
-.profile {
-    margin: 20px;
-}
+@import "components/_post.css";
+@import "components/_profile.css";
 

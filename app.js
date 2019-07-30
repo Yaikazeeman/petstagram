@@ -58,10 +58,10 @@ let accessControl = (req, res, next)=> {
     }
 }
 
-// app.use(function(req,res,next) {
-//     if(req.session.user) res.locals.user = req.session.user;
-//     next();
-//     })
+app.use(function(req,res,next) {
+    if(req.session.user) res.locals.user = req.session.user;
+    next();
+    })
 
 const login = require('./routes/login')
 app.use('/', login);
@@ -72,7 +72,7 @@ app.use('/', accessControl, index);
 const create = require('./routes/create')
 app.use('/', accessControl, upload.single('image'), create);
 const profilepage = require('./routes/profilepage')
-app.use('/', accessControl, profilepage);
+app.use('/', accessControl, upload.single('profileImg'), profilepage);
 const logout = require('./routes/login')
 app.use('/', accessControl, logout);
 
