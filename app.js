@@ -77,5 +77,7 @@ const logout = require('./routes/login')
 app.use('/', accessControl, logout);
 const changepassword = require('./routes/changepassword')
 app.use('/', accessControl, changepassword);
+const updateInfo = require('./routes/updateInfo')
+app.use('/', accessControl, upload.single('image'), updateInfo);
 
 app.listen(process.env.PORT, () => {console.log(`app listening on port ${process.env.PORT}`)})

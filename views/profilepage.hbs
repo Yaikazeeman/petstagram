@@ -1,20 +1,25 @@
 <div class="profile">
     {{#user}}
     <div class="flex-container">
-        <img class="profilepic" src="/images/{{profileImg}}">
+        <img class="profilepic" src="/images/userPhotos/{{profileImg}}">
+        {{!-- <form class="profileimg-form" action="/profilepage-img" method="post" enctype="multipart/form-data">
+            <label class="label-profileImg" for="image">
+                <input type="file" class="profilepic" name="profileImg" accept="image/*" id="image" style="display:none;"/>
+                <img class="profilepic" src="/images/{{profileImg}}"/>
+                <input type="submit"/>
+            </label>
+        </form>  --}}
         <div>
             <h3>{{username}}</h3>
             <p>{{bio}}</p>
-            <form action="/profilepage" method="post">
+            <a href="/updateInfo">Edit info</a>
+            {{!-- <form action="/profilepage" method="post">
                 <input name="bio" placeholder="Edit bio">
                 <button type="submit">Edit</button>
-            </form>
+            </form> --}}
         </div>
     </div>
-        <form action="/profilepage" method="post" enctype="multipart/form-data">
-            <input  type="file" name="profileImg">
-            <button type="submit">Upload</button>
-        </form>
+
      {{!-- <div>
         <h3>My pet/pets</h3>
         {{#each pets}}
