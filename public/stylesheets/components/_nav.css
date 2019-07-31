@@ -14,8 +14,13 @@ nav {
 
 .nav-logo {
     width: 130px;
+    margin: 5px auto;
 }
 
 .nav-logo-center {
     margin: 5px auto;
+}
+
+.nav-profileImg {
+    border-radius: 50%;
 }

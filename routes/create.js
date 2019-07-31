@@ -25,7 +25,7 @@ router.post('/create', (req, res, next) => {
     )
         .then((post)=>{
             res.redirect('/')
-            console.log("Your post is saved" + post)
+            console.log("Your post is saved" )
         })
         .catch((err) => {
             console.log(err)
