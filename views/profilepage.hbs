@@ -1,5 +1,5 @@
 <div class="profile">
-    {{#user}}
+    {{#userpage}}
     <div class="flex-container">
         <img class="profilepic" src="/images/userPhotos/{{profileImg}}">
         {{!-- <form class="profileimg-form" action="/profilepage-img" method="post" enctype="multipart/form-data">
@@ -12,14 +12,13 @@
         <div>
             <h3>{{username}}</h3>
             <p>{{bio}}</p>
-            <a href="/updateInfo">Edit info</a>
-            {{!-- <form action="/profilepage" method="post">
+            <form action="/profilepage" method="post">
                 <input name="bio" placeholder="Edit bio">
-                <button type="submit">Edit</button>
-            </form> --}}
+                <button type="submit">Edit bio</button>
+            </form>
         </div>
     </div>
-
+        <a class="no-link-style" href="/updateInfo">Edit profile photo</a>
      {{!-- <div>
         <h3>My pet/pets</h3>
         {{#each pets}}
@@ -28,13 +27,13 @@
     </div> --}}
     <div>
         <h3>My posts</h3>
-        <div class="flex-container">
+        <div class="flex-container user-images-container">
             {{#each posts}}
-            <div>
-                {{>post}}
+            <div class="userimages">
+                <img class="image-single" src="/images/userPhotos/{{this.image}}">
             </div>
             {{/each}}
         </div>
     </div>
-    {{/user}}
-</div>
+    {{/userpage}}
+</div>  

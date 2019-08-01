@@ -4,24 +4,32 @@ const Users = require('../models/Users');
 const Post = require('../models/Post');
 
 router.get('/profilepage', (req, res) => {
-    res.render('profilepage')
+    Users.findById(res.locals.user._id)
+        .populate('posts', 'image', null, { sort: { 'timestamp': -1 } })
+        .then(userpage => {
+            res.render('profilepage', {userpage})
+            console.log("userpage is rendered")
+        })
+        .catch(err => {
+            console.log(err)
+        })
 })
 
-// router.post('/profilepage', (req, res) => {
-//     let updateInfo = {
-//         bio: req.body.bio,
-//     }
-//     Users.findByIdAndUpdate(res.locals.user._id, updateInfo,{new:true})
-//     .then((updatedUser) => {
-//         console.log("info has been updated")
-//         // console.log(updatedUser)
-//         res.locals.user = updatedUser
-//         res.render('profilepage')
-//     })
-//     .catch((error) => {
-//         console.log(error)
-//     })
-// })
+router.post('/profilepage', (req, res) => {
+    let updateInfo = {
+        bio: req.body.bio,
+    }
+    Users.findByIdAndUpdate(res.locals.user._id, updateInfo,{new:true})
+    .then((updatedUser) => {
+        console.log("info has been updated")
+        // console.log(updatedUser)
+        res.locals.user = updatedUser
+        res.render('profilepage')
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+})
 
 // router.post('/profilepage-img', (req, res) => {
 //     let updateImg = {

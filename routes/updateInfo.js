@@ -10,15 +10,22 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get('/updateInfo', (req, res) => {
-    res.render('updateInfo');
+    res.render('updateInfo')
+    // Users.findOne(res.locals.user._id)
+    // .then(() => {
+    //     res.render('updateInfo');
+    // })
+    // .catch((err) => {
+    //     console.log(err)
+    // })
 })
 
 router.post('/updateInfo', (req, res, next) => {
     debugger
     let updateInfo = {
         // username: req.body.username,
-        email: req.body.email,
-        bio: req.body.bio,
+        // email: req.body.email,
+        // bio: req.body.bio,
         profileImg: req.file.filename,
     }
     Users.findByIdAndUpdate(res.locals.user._id, updateInfo,{new:true})

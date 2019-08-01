@@ -10,8 +10,8 @@ const userSchema = new Schema ({
     password: String,
     bio: String,
     pets: Array,
-    posts: [{type: ObjectId, ref: 'post'}],
-    liked: [{type: ObjectId, ref: 'post'}]
+    posts: [{type: ObjectId, ref: 'posts'}],
+    liked: [{type: ObjectId, ref: 'posts'}]
 });
 
 const User = mongoose.model('users', userSchema, "users")
