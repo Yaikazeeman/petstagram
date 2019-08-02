@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
     Post.find({}).sort({timestamp: -1})
         .populate('postedBy')    
         .then(posts => {
-            console.log(posts[0]._id)
             res.render('index', {posts})
             console.log("homepage is rendered")
         })
