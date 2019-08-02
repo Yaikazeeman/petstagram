@@ -1,10 +1,21 @@
 .profilepic {
-    width: 40%;
+    width: 100%;
     border-radius: 50%;
-    margin: 15px;
+    margin: 20px;
 }
 
-.label-profileImg {
+.profile-img-container {
+    width: 120px;
+    height: 120px;
+    margin: 15px 50px 15px 15px;
+}
+
+.userinfo-div {
+    margin: 20px;
+    width: 50%;
+}
+
+/* .label-profileImg {
     display: inline-block;
     width: 100%;
     margin: auto;
@@ -13,7 +24,7 @@
 .profileimg-form {
     width: 50%;
     margin: 0 20px 0 0;
-}
+} */
 
 .user-images-container {
     width: 100%;
