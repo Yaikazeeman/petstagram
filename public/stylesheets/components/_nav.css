@@ -26,3 +26,33 @@ nav {
 .nav-profileImg {
     border-radius: 50%;
 }
+
+.hidden {
+    display: none;
+}
+
+.linkDiv {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 95px;
+    right: 30px;
+    background-color: white;
+    border-radius: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 70%;
+    height: 27%;
+}
+
+.linkDiv a {
+    text-decoration: none;
+}
+
+.linkDiv a div {
+    margin: 0 auto;
+}
+
+.linkDiv a div h3{
+    text-decoration: none;
+    text-align: center;
+}

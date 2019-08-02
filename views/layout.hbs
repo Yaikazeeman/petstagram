@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
     <div class="all-container">
-    {{> nav}}
-    {{{body}}}
-    {{> footer}}
+        <div class="linkDiv hidden">
+            <a href="/profilepage">
+                <div class="profilepagePopup">
+                    <h3>Profilepage</h3>
+                </div>
+            </a>
+            <a href="/changepassword">
+                <div class="changepasswordPopup">
+                    <h3>Change password</h3>
+                </div>
+            </a>
+            <a href="/logout">
+                <div class="logoutPopup">
+                    <h3>Log out</h3>
+                </div>
+            </a>
+        </div>
+        {{> nav}}
+        {{{body}}}
+        {{> footer}}
     </div>
+    <script src="/index.js"></script>
 </body>
+
 </html>

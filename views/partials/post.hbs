@@ -3,7 +3,7 @@
         <img class="profileimg" src="/images/userPhotos/{{post.postedBy.profileImg}}">
         <p>{{post.postedBy.username}}</p>
         {{#if_eq user._id post.postedBy._id}}
-        <a class="delete-link" href="/delete/{{post._id}}" ><img class="delete-icon" src="/images/delete-icon.jpg"></a>
+        <a class="delete-link" href="/delete/{{post._id}}"><img class="delete-icon" src="/images/delete-icon.jpg"></a>
         {{/if_eq}}
     </div>
     <img class="post-img" src="/images/userPhotos/{{post.image}}">
@@ -12,16 +12,18 @@
     </div>
     <div class="flex-container">
         <div class="flex-container likes">
-            <img class="post-buttons" src="/images/heart-empty.png">
+            <div class="flex-container ">
+                <img class="post-buttons likebtn" src="/images/heart-empty.png">
+                <img class="post-buttons redLike hidden" src="/images/heart-red.png">
+            </div>
             <p>{{post.likes}} likes</p>
         </div>
         <div class="flex-container comments">
             <img class="post-buttons" src="/images/comment.png">
-            <p>{{post.comments}} comments</p>
+            <a href="/comment?post_id={{post._id}}"><p>{{post.comments}} comments</p></a>
         </div>
         <div class="flex-container comments">
             <a>Show more</a>
         </div>
     </div>
 </div>
-

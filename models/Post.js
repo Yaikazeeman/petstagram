@@ -6,7 +6,7 @@ const postSchema = new Schema ({
     postedBy: {type : ObjectId, ref: 'users' },
     image: String,
     caption: String,
-    comment: [String],
+    comment: [{type:String}],
     likes: Number,
     likedBy: [{type: ObjectId, ref: 'users'}],
     timestamp: {type: Date, default: Date.now}

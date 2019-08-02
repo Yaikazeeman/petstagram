@@ -7,8 +7,13 @@ footer {
     justify-content: space-around;
     box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.2);
     background-color: white;
+    height: 40px;
 }
 
 footer a {
     text-decoration: none;
+}
+
+.createbutton {
+    width: 80px;
 }
