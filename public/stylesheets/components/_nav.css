@@ -37,15 +37,18 @@ nav {
     flex-direction: column;
     top: 95px;
     right: 30px;
+    margin: 0 auto;
     background-color: white;
     border-radius: 10%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 70%;
-    height: 27%;
+    width: 300px;
+
 }
 
 .linkDiv a {
     text-decoration: none;
+    color: black;
+    margin: 10px;
 }
 
 .linkDiv a div {
@@ -55,4 +58,22 @@ nav {
 .linkDiv a div h3{
     text-decoration: none;
     text-align: center;
+}
+
+@media screen and (min-width: 550px) {
+
+    
+    .linkDiv {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        top: 95px;
+        right: 30%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 300px;
+    
+    }
 }

@@ -56,13 +56,14 @@ body {
 }
 
 
-@media  (min-width: 550px) {
+@media screen and (min-width: 550px) {
 
-    .all-container{
+    body{
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         max-width: 550px;
     }
+
 }
