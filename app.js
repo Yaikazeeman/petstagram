@@ -50,7 +50,10 @@ app.use(session({
     secret: "basic-auth-secret",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 },
+    store: new MongoStore({ 
+        ttl: 24 * 60 * 60,
+        url: process.env.MONGODB_URI
+    })
     }));
 
 
