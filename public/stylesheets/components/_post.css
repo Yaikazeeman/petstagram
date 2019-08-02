@@ -32,8 +32,11 @@
 .comments a {
     margin: 10px;
     text-decoration: none;
-    align-self: center;
     color: black;
+}
+
+.comments a p {
+    margin: 0;
 }
 
 .caption {
