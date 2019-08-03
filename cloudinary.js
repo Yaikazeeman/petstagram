@@ -5,6 +5,7 @@ const cloudinary = require('cloudinary').v2
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const multer = require('multer');
 const uploadCloud = multer({ storage: storage });
+const cloudinary_upload_preset = 'rdwi5akv';
 
 // app.use('/uploads', express.static('uploads'))
 

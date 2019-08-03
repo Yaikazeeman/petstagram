@@ -7,6 +7,7 @@ const path       = require('path')
 const mongoose   = require('mongoose');
 const bodyParser = require('body-parser');
 const multer     = require('multer');
+const axios      = require('axios');
 const session    = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
