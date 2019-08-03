@@ -26,7 +26,8 @@ router.post('/updateInfo', (req, res, next) => {
         // username: req.body.username,
         // email: req.body.email,
         // bio: req.body.bio,
-        profileImg: req.file.filename,
+        profileImg: req.file.url,
+        profileImgeName: req.file.originalname
     }
     Users.findByIdAndUpdate(res.locals.user._id, updateInfo, {
             new: true
