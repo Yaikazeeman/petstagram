@@ -4,10 +4,6 @@ const Users = require('../models/Users');
 const Post = require('../models/Post');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-// const cloud = require('./cloudinaryConfig');
-// const cloudinary = require('cloudinary').v2
-// const imageController = require('./imageController');
-// const upload = require('./cloudinaryUploads/multer');
 
 router.use(bodyParser.urlencoded({
     extended: false
@@ -25,17 +21,6 @@ router.post('/create', (req, res, next) => {
             imageName: req.file.originalname,
             caption: req.body.caption
         })
-        // cloud.uploads(newPost.image)
-        // .then((result) => {
-        //     var imageDetails = {
-        //     imageName: req.body.imageName,
-        //     cloudImage: result.url,
-        //     imageId: result.id
-        //     }
-        //     //THEN CREATE THE FILE IN THE DATABASE
-        //     imageModel.create(imageDetails, (err, created)=> {
-
-    // router.post('/create', upload.any(), imageController.createApp);
 
     newPost.save(
             Post.populate(newPost, 'postedBy')

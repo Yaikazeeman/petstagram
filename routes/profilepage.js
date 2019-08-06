@@ -7,6 +7,7 @@ router.get('/profilepage', (req, res) => {
     Users.findById(res.locals.user._id)
         .populate('posts', 'image', null, { sort: { 'timestamp': -1 } })
         .then(userpage => {
+            console.log(userpage)
             res.render('profilepage', {userpage})
             console.log("userpage is rendered")
         })

@@ -21,7 +21,6 @@ router.get('/updateInfo', (req, res) => {
 })
 
 router.post('/updateInfo', (req, res, next) => {
-    debugger
     let updateInfo = {
         // username: req.body.username,
         // email: req.body.email,
@@ -39,6 +38,7 @@ router.post('/updateInfo', (req, res, next) => {
         })
         .then((userpage) => {
             res.locals.user = userpage
+            req.session.user = userpage
             res.render('profilepage', {
                 userpage
             })

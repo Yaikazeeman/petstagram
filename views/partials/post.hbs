@@ -16,14 +16,19 @@
                 <img class="post-buttons likebtn" src="/images/heart-empty.png">
                 <img class="post-buttons redLike hidden" src="/images/heart-red.png">
             </div>
-            <p>{{post.likes}} likes</p>
+            <p><span class="likeAmount">{{post.likes}}</span> likes</p>
         </div>
         <div class="flex-container comments">
             <img class="post-buttons" src="/images/comment.png">
-            <a href="/comment?post_id={{post._id}}"><p>{{post.comments}} comments</p></a>
+            <a href="/comment?post_id={{post._id}}"><p> comments</p></a>
         </div>
         <div class="flex-container comments show-more">
-            <a>Show more</a>
+            <a class="showComments">Show more</a>
         </div>
+    </div>
+    <div class="commentDiv hidden">
+        {{#each post.comment}}
+        <p>{{this}}</p>
+        {{/each}}
     </div>
 </div>
