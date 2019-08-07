@@ -7,11 +7,15 @@ $(".likebtn").click(function(){
     $(this).siblings().toggleClass("hidden");
     $(this).toggleClass("hidden");
     
+    let newNumber = 
+    $(".likeAmount").html;
 })
 
 $(".redLike").click(function(){
     $(this).siblings().toggleClass("hidden");
     $(this).toggleClass("hidden");
+
+
 })
 
 $(".nav-profileImg").click(function(){
@@ -35,3 +39,8 @@ $(".showComments").click(function(){
 
 //     clickLikeBtn.innerHTML = 
 // }
+
+$("").click(function() {
+    var htmlString = $( this ).html();
+    $( this ).text( htmlString );
+  });
