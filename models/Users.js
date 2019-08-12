@@ -5,7 +5,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const userSchema = new Schema ({
     username: String,
-    profileImg: {type: String, default: "default.jpg"},
+    profileImg: {type: String, default: "https://res.cloudinary.com/dkrua0amo/image/upload/v1565260497/Petstagram/default.png.png"},
     profileImgName: String,
     email: String,
     password: String,

@@ -1,34 +1,36 @@
-<div class="profile">
-    {{#userpage}}
-    <div class="flex-container">
-        <div class="profile-img-container">
-            <img class="profilepic" src="{{profileImg}}">
+<div class="footer-fix-container">
+    <div class="profile">
+        {{#userpage}}
+        <div class="flex-container">
+            <div class="profile-img-container">
+                <img class="profilepic" src="{{profileImg}}">
+            </div>
+            <div class="userinfo-div">
+                <h3>{{username}}</h3>
+                <p>{{bio}}</p>
+                <form action="/profilepage" method="post">
+                    <input name="bio" placeholder="Edit bio">
+                    <button type="submit">Edit bio</button>
+                </form>
+            </div>
         </div>
-        <div class="userinfo-div">
-            <h3>{{username}}</h3>
-            <p>{{bio}}</p>
-            <form action="/profilepage" method="post">
-                <input name="bio" placeholder="Edit bio">
-                <button type="submit">Edit bio</button>
-            </form>
-        </div>
-    </div>
-    <a class="no-link-style" href="/updateInfo">Edit profile photo</a>
-    {{!-- <div>
+        <a class="no-link-style" href="/updateInfo">Edit profile photo</a>
+        {{!-- <div>
         <h3>My pet/pets</h3>
         {{#each pets}}
         {{>pets}}
         {{/each}}
     </div> --}}
-    <div>
-        <h3>My posts</h3>
-        <div class="flex-container user-images-container">
-            {{#each posts}}
-            <div class="userimages">
-                <img class="image-single" src="{{this.image}}">
+        <div>
+            <h3>My posts</h3>
+            <div class="flex-container user-images-container">
+                {{#each posts}}
+                <div class="userimages">
+                    <img class="image-single" src="{{this.image}}">
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
+        {{/userpage}}
     </div>
-    {{/userpage}}
 </div>

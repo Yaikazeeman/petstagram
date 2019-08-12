@@ -10,21 +10,40 @@ router.use(bodyParser.urlencoded({
 }));
 
 router.get('/comment', (req, res) => {
-    res.render('comment', {postId: req.query.post_id});
+    res.render('comment', {
+        postId: req.query.post_id
+    });
 })
 
 router.post('/comment', (req, res, next) => {
     debugger
-    let id =req.query.post_id;
-    let newComment =  req.body.comment
-    Post.findByIdAndUpdate(id, { $push: {comment: newComment }}, {new: true })
+    let id = req.query.post_id;
+    let newComment = req.body.comment
+    Post.findByIdAndUpdate(id, {
+            $push: {
+                comment: newComment
+            }
+        }, {
+            new: true
+        })
         .then((post) => {
             res.redirect('/')
-           
+
         })
         .catch((err) => {
             console.log(err)
         })
-        })
+})
+
+// router.post('/like/:id', (req, res, next) => {
+//     Post.findById(req.params.id)
+//         .then((likedPost) => {
+//                 return (
+//                     Post.findOneAndUpdate({likeedPost},Post.likes = +1)
+//                 )
+//             }
+
+//         )
+// })
 
 module.exports = router;

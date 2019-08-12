@@ -1,4 +1,3 @@
-// import Axios from "axios";
 
 var likebutton = document.getElementsByClassName("likebtn");
 var redlikebutton = document.getElementsByClassName("redLike");
@@ -14,14 +13,11 @@ $(".likebtn").click(function(){
 $(".redLike").click(function(){
     $(this).siblings().toggleClass("hidden");
     $(this).toggleClass("hidden");
-
-
 })
 
 $(".nav-profileImg").click(function(){
     $(".linkDiv").toggleClass('hidden');
   });
-
 
 var showMoreBtn = document.getElementsByClassName("showComments");
 
@@ -32,7 +28,6 @@ $(".showComments").click(function(){
 
 // function changeLikes () {
 //     Axios.get(){
-
 //     }
 
 //     let clickLikeBtn = document.getElementsByClassName("likeAmount")[0].onClick
@@ -40,7 +35,17 @@ $(".showComments").click(function(){
 //     clickLikeBtn.innerHTML = 
 // }
 
-$("").click(function() {
-    var htmlString = $( this ).html();
-    $( this ).text( htmlString );
-  });
+// $("").click(function() {
+//     var htmlString = $( this ).html();
+//     $( this ).text( htmlString );
+//   });
+
+// function liked(event, postId) {
+//     const target = event.currentTarget;
+//     Axios.post('/like/:id')
+//         .then(function(response) {
+//             likeAmount.innerHTML(response.data.likes)
+//         })
+// }
+
+// }
