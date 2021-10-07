@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Yaikazeeman/petstagram#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.2",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.14.0",
